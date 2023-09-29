@@ -10,7 +10,7 @@
 
 .sidebar{
     background-color: rgb(219, 219, 219);
-    width: 400px;
+    width: 300px;
     font-family: 'Poppins', sans-serif;
     height: 100vh;
 }
@@ -57,16 +57,25 @@
 
 .hello{
     font-size: 45px;
+    margin-top: 5px;
 }
 
 .name{
     font-size: 35px;
     font-weight: bold;
+    margin-top: 10px;
     font-family: 'Gabarito', cursive;
 }
 
 .about{
     font-size: 20px;
+    margin-top: 10px;
+}
+
+.aboutme{
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .buttons {
