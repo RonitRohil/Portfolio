@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Martian+Mono&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Josefin+Slab:wght@300;500&family=Martian+Mono&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    background-color: rgb(219, 219, 219);
+    width: 400px;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+.sidebar nav {
+    padding: 45px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    font-size: 20px;
+    padding: 33px;
+}
+
+.sidebar nav li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.main{
+    /* background-color: yellow; */
+    width: 90vw;
+}
+
+.container{
+    display: flex;
+}
+
+.infoContainer{
+    /* background-color: aqua; */
+    margin: 150px auto;
+    height: 55vh;
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.divInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Josefin Slab', serif;
+}
+
+.hello{
+    font-size: 45px;
+}
+
+.name{
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Gabarito', cursive;
+}
+
+.about{
+    font-size: 20px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons button {
+    padding: 9px 14px;
+    border-radius: 20px;
+    color: aliceblue;
+    background-color: rgb(1, 179, 179);
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0px 3px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: aliceblue;
+    color: rgb(1, 179, 179);
+}
+
+.divPic img{
+    height: 55vh;
+}
