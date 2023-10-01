@@ -17,7 +17,7 @@
             </a>
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                 <a class="mr-5 hover:text-gray-900" href="aboutme.html">About Me</a>
-                <a class="mr-5 hover:text-gray-900" href="services.html">Services</a>
+                <!-- <a class="mr-5 hover:text-gray-900" href="services.html">Services</a> -->
                 <a class="mr-5 hover:text-gray-900" href="resume.html">Resume</a>
                 <a class="mr-5 hover:text-gray-900" href="projects.html">Projects</a>
             </nav>
@@ -32,7 +32,7 @@
         </div>
     </header>
 
-    <section class="text-gray-600 body-font">
+    <section class="text-gray-600 body-font" id="intro">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Hi I am Ronit Jain
@@ -53,12 +53,12 @@
             </div>
         </div>
     </section>
-
-    <section class="text-gray-600 body-font">
+ 
+    <section class="text-gray-600 body-font" id="education">
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
                 <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">School and College</h2>
-                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900"> My Education</h1>
+                <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900" > My Education</h1>
                 <br>
                 <div class="flex flex-wrap -m-4">
                     <div class="p-4 md:w-1/3">
@@ -124,7 +124,7 @@
         </div>
     </section>
 
-    <section class="text-gray-600 body-font">
+    <section class="text-gray-600 body-font" id="skills">
         <div class="px-5 py-24 mx-auto">
           <div class="text-center mb-20">
             <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">skills</h2>
@@ -466,7 +466,7 @@
       </section>
 
 
-      <section class="text-gray-600 body-font">
+      <section class="text-gray-600 body-font" id="experience">
         <div class="container px-5 py-24 mx-auto flex flex-col">
           <div class="lg:w-4/6 mx-auto">
             <h2 class="text-xs text-center text-indigo-500 tracking-widest font-medium title-font mb-1">Internships & Jobs</h2>
@@ -510,12 +510,55 @@
                 </a>
               </div>
             </div>
+
+            <div class="flex flex-col sm:flex-row mt-10">
+              <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                
+                  <div class="rounded-lg  w-80 overflow-hidden inline-flex items-center justify-center bg-gray-200 text-gray-400">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="./images/excitonium.png">
+                  </div>
+                  
+                <div class="flex flex-col items-center text-center justify-center">
+                  <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">Excitonium and Sigma Book - Youtube Channel</h2>
+                  <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
+                  <p class="text-base">
+                    <b>Educator</b>
+                    <br>
+                    2019 - 2022
+                  </p>
+                </div>
+              </div>
+              <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <p class="leading-relaxed text-lg mb-4">
+                    • Created maths education videos for class IX and X for CBSE Boards.
+                    <br>
+                    • Edited videos for my own youtube channel and designed Thumbnails.
+                    <br>
+                    • Created more than 200+ videos. 
+                    <br>
+                </p>
+                <a class="text-indigo-500 inline-flex items-center" href="https://www.youtube.com/@Excitonium">Excitonium
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+                <br>
+                <a class="text-indigo-500 inline-flex items-center" href="https://akssai.com/">Sigma Book
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+
+
           </div>
         </div>
       </section>
 
 
-      <section class="text-gray-600 body-font">
+      <section class="text-gray-600 body-font" id="pos">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
             <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">Co-curricular Activities</h2>
@@ -673,7 +716,7 @@
         </div>
       </section>
 
-      <section class="text-gray-600 body-font">
+      <section class="text-gray-600 body-font" id="certi">
       
         <div class="px-5 py-24 mx-auto">
           <div class="flex flex-col text-center w-full mb-20">
@@ -682,6 +725,17 @@
             <p class="lg:w-2/3 mx-auto leading-relaxed text-base">These are the certificates which I have earned by doing some courses or conferences.</p>
           </div>
             <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+
+                <div class="sm:w-1/2 mb-10 px-4">
+                    <div class="rounded-lg h-120 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="./images/JPC.png">
+                    </div>
+                    <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Java Placement Course (DSA) - Apna College </h2>
+                    <!-- <p class="leading-relaxed text-base">Williamsburg occupy sustainable snackwave gochujang. Pinterest cornhole brunch, slow-carb neutra irony.</p> -->
+                    <a href="./images/Certificate.pdf" target="_blank">
+                    <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Certificate</button>
+                    </a>
+                </div>
             
                 <div class="sm:w-1/2 mb-10 px-4">
                     <div class="rounded-lg h-120 overflow-hidden">
@@ -728,20 +782,138 @@
         </div>
       </section>
 
+      <section class="text-gray-600 body-font" id="links">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Profile Links</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto"></p>
+          
+          <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://github.com/RonitRohil" target="_blank">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Github</span>
+              </div>
+              </a>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://www.linkedin.com/in/ronitjain0402/" target="_blank">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                  </svg>
+                  <span class="title-font font-medium">LinkedIn</span>
+                </div>
+                </a>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://www.instagram.com/ronitrohilrj/" target="_blank">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                  </svg>
+                  <span class="title-font font-medium">Instagram</span>
+                </div>
+                </a>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://leetcode.com/ronitrohil/" target="_blank">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                  </svg>
+                  <span class="title-font font-medium">LeetCode</span>
+                </div>
+                </a>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://www.facebook.com/ronit.jain.18041/" target="_blank">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path> 
+                  </svg>
+                  <span class="title-font font-medium">Facebook</span>
+                </div>
+                </a>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://www.youtube.com/@Excitonium" target="_blank">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                  </svg>
+                  <span class="title-font font-medium">Excitonium - Youtube Channel</span>
+                </div>
+                </a>
+            </div>
+            <div class="p-2 sm:w-1/2 w-full">
+              <a href="https://youtube.com/@ronitjain4700?si=4LnIboZ41U0T4SeM" target="_blank">
+                <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                    <path d="M22 4L12 14.01l-3-3"></path>
+                  </svg>
+                  <span class="title-font font-medium">RonitRohil - Personel Youtube Channel</span>
+                </div>
+                </a>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </section>
+
+
       <footer class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
           <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-              <span class="ml-3 text-xl">Tailblocks</span>
+                <img src="./images/8.jpeg"  class="w-10 h-10 text-white bg-indigo-500 rounded-full" viewBox="0 0 12 12">
+              <span class="ml-3 text-xl">Ronit Jain</span>
             </a>
-            <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+            <p class="mt-2 text-sm text-gray-500">Developer, Graphic Designer, Video Editor</p>
+            <a href="contact.html">
+                <button class="mx-auto mt-2 text-white bg-indigo-500 border-0 py-1 px-7 focus:outline-none hover:bg-indigo-600 rounded text-lg">Contact Me</button>
+            </a>
           </div>
           <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+            <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ABOUT ME</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="./aboutme.html#intro">Intro</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="#education">Education</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="./aboutme.html#experience">Experiences</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="./aboutme.html#skills">Skills</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="./aboutme.html#pos">Position of Responsiblity</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="./aboutme.html#certi">Achievements</a> 
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800" href="./aboutme.html#links">Profiles</a> 
+                </li>
+              </nav>
+            </div>
+            <!-- <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SERVICES</h2>
               <nav class="list-none mb-10">
                 <li>
                   <a class="text-gray-600 hover:text-gray-800">First Link</a>
@@ -756,89 +928,72 @@
                   <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
                 </li>
               </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+            </div> -->
+            <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">PROJECTS</h2>
               <nav class="list-none mb-10">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a class="text-gray-600 hover:text-gray-800" href="./sde_project.html">SDE Projects</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a class="text-gray-600 hover:text-gray-800" href="./designs.html">Designs</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  <a class="text-gray-600 hover:text-gray-800" href="./videos.html#reels">Reels</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  <a class="text-gray-600 hover:text-gray-800" href="./videos.html#Youtubevideo">Youtube Videos</a>
                 </li>
               </nav>
             </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+            <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">RESUME</h2>
               <nav class="list-none mb-10">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a class="text-gray-600 hover:text-gray-800" href="./images/resume/Ronit Jain-Resume.pdf" target="_blank">Graphic Design and Video Editor</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a class="text-gray-600 hover:text-gray-800" href="./images/resume/Ronit Jain - Resume2.pdf" target="_blank">Software Engineer</a>
                 </li>
-                <li>
+                <!-- <li>
                   <a class="text-gray-600 hover:text-gray-800">Third Link</a>
                 </li>
                 <li>
                   <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                </li>
-              </nav>
-            </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
-              <nav class="list-none mb-10">
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
-                </li>
-                <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
-                </li>
+                </li> -->
               </nav>
             </div>
           </div>
         </div>
         <div class="bg-gray-100">
           <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
-              <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+            <p class="text-gray-500 text-sm text-center sm:text-left">© 2023 ronitrohil —
+              <a href="https://github.com/RonitRohil/" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@ronitrohil</a>
             </p>
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-              <a class="text-gray-500">
-                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <a class="text-gray-500" href="https://www.facebook.com/ronit.jain.18041" target="_blank">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
+                  </svg>
               </a>
-              <a class="ml-3 text-gray-500">
-                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <!-- <a class="ml-3 text-gray-500" href="" target="_blank"> 
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                   <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a class="ml-3 text-gray-500">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  </svg>
+              </a> -->
+              <a class="ml-3 text-gray-500" href="https://www.instagram.com/ronitrohilrj/" target="_blank">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                </svg>
+                  </svg>
               </a>
-              <a class="ml-3 text-gray-500">
-                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <a class="ml-3 text-gray-500" href="https://www.linkedin.com/in/ronitjain0402/" target="_blank">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
                   <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
                   <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                </svg>
+                  </svg>
               </a>
-            </span>
+          </span>
           </div>
         </div>
       </footer>
