@@ -5,6 +5,7 @@ export const navLinks = [
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "open-source", label: "Open Source" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -29,7 +30,7 @@ export const siteContent = {
   ],
   stats: [
     { value: "2+", label: "Years of professional experience" },
-    { value: "100+", label: "Production APIs shipped" },
+    { value: "10+", label: "Production APIs shipped" },
     { value: "3", label: "Indie products in development" },
     { value: "200+", label: "Educational videos created" },
   ],
@@ -75,7 +76,7 @@ export const siteContent = {
         "Built a multi-format bank statement analyzer supporting PDF, Excel, and CSV using Python, Flask, Pandas, and pdfplumber with dynamic header detection, metadata extraction, and per-transaction confidence scoring.",
         "Integrated Pennyless API for account and IFSC validation plus UPI ID verification for transaction enrichment.",
         "Developed GSTR-1 filing and GSTR-2A/2B reconciliation modules with automated mismatch detection.",
-        "Implemented E-Way Bill generation and MineTrac report generation modules.",
+        "Implemented E-Way Bill generation, E-Invoicing, and MineTrac report generation modules.",
         "Built JWT and CSRF authentication with session tracking, email plus Google plus Apple signup flows, and duplicate detection.",
         "Shipped Recruitment Tracker, TDS Master, Timesheet Reporting, and Client Meetup Checklist modules.",
         "Resolved security issues including CORS misconfiguration, prototype pollution, and client-assign authorization gaps.",
@@ -93,18 +94,6 @@ export const siteContent = {
         "Worked with Node.js and PostgreSQL while aligning API behavior with internal product requirements.",
       ],
     },
-    // {
-    //   role: "Educator",
-    //   company: "Excitonium (YouTube)",
-    //   period: "2019 - 2022",
-    //   location: "Remote",
-    //   summary:
-    //     "Created educational content and handled the production side of the channel.",
-    //   bullets: [
-    //     "Created and edited 200+ mathematics education videos for CBSE Class IX-X.",
-    //     "Designed thumbnails in Adobe Photoshop and managed channel-facing content operations.",
-    //   ],
-    // },
   ],
   skillGroups: [
     {
@@ -115,7 +104,6 @@ export const siteContent = {
         ["JavaScript", "proficient"],
         ["SQL", "proficient"],
         ["Java", "working"],
-        // ["GraphQL", "working"],
         ["TypeScript", "learning"],
       ],
     },
@@ -177,6 +165,13 @@ export const siteContent = {
       ],
     },
   ],
+  engineeringHighlights: [
+    "Built a multi-format bank parser supporting PDF, CSV, and Excel ingestion flows.",
+    "Automated GST workflows across reconciliation, filing, and compliance modules.",
+    "Designed reusable JWT plus CSRF authentication flows across multiple systems.",
+    "Shipped backend systems for subscriptions, parsing, reporting, and reconciliation.",
+    "Resolved production-facing security issues including CORS and authorization gaps.",
+  ],
   projects: [
     {
       title: "FINAC Bank Statement Analyzer",
@@ -211,11 +206,8 @@ export const siteContent = {
         "GSTR-1 filing with invoice classification and return generation",
         "GSTR-2A/2B reconciliation with mismatch detection",
         "E-Way Bill generation tied into portal workflows",
-        "E-Invoicing module with IRP integration for invoice generation and cancellation",
-        "TDS Master for calculation and challan management",
-        "Timesheet reporting module for employee work hour tracking",
-        "Client meetup checklist module for audit preparation",
-        "Multiple reports and analytics modules for financial insights and operational efficiency",
+        "E-Invoicing module with IRP integration for generation and cancellation",
+        "TDS Master, timesheet reporting, and checklist workflows for operations teams",
       ],
       status: "Production · AKSSAI ProjExel",
       tone: "indigo",
@@ -305,6 +297,115 @@ export const siteContent = {
       description: "Content-driven website for a mutual fund company.",
       status: "Live",
       icon: "BriefcaseBusiness",
+    },
+  ],
+  githubProjects: [
+    {
+      title: "Bank Statement Analyzer (Open Source)",
+      emoji: "📄",
+      stack: ["Python", "Pandas", "pdfplumber", "Flask API", "PDF / Excel / CSV Parser", "React + TypeScript"],
+      description:
+        "An open-source bank statement parser supporting Excel, CSV, and PDF formats with dynamic column detection.",
+      features: [
+        "Automatic header row detection",
+        "Flexible column mapping",
+        "Transaction classification logic",
+        "Support for multiple bank formats",
+      ],
+      github: 'https://github.com/RonitRohil/Bank-Statement-Analyzer',
+      githubLabel: "Add repo link",
+    },
+    {
+      title: "Multi-Site Web Scraper",
+      emoji: "🕸️",
+      stack: ["Node.js", "Playwright", "Axios"],
+      description:
+        "A configurable scraping engine to extract structured data from multiple websites with cleanup and export support.",
+      features: [
+        "Multi-page crawling",
+        "Data cleaning pipeline",
+        "Batch Scraping with concurrency control",
+        "Retry and failure handling",
+      ],
+      github: 'https://github.com/RonitRohil/Web-Scrapping-Project',
+      githubLabel: "Add repo link",
+    },
+    {
+      title: "Node.js Backend Boilerplate",
+      emoji: "⚙️",
+      stack: ["Node.js", "Express", "JWT", "PostgreSQL", "Prisma"],
+      description:
+        "A production-ready Node.js backend template with authentication, logging, and modular architecture.",
+      features: [
+        "JWT authentication setup",
+        "Modular route architecture",
+        "Centralized error handling",
+        "Environment configuration",
+      ],
+      github: 'https://github.com/RonitRohil/Node.Js-API-Bioler-Plate',
+      githubLabel: "Add repo link",
+    },
+    {
+      title: "ArthSigh - AI Equity Insights",
+      emoji: "📈",
+      stack: ["Google AI Studio", "Python", "Data Analysis"],
+      description:
+        "An AI-powered equity insights tool that analyzes financial data and generates intelligent investment summaries.",
+      features: [
+        "Equity data ingestion",
+        "AI-generated financial insights",
+        "Trend analysis workflows",
+        "Automated reporting",
+      ],
+      github: 'https://github.com/RonitRohil/ArthSight-AI',
+      githubLabel: "Add repo link",
+    },
+  ],
+  architectureFlows: [
+    {
+      title: "Bank Statement Analyzer",
+      summary: "This is the signature system where the data pipeline matters as much as the feature list.",
+      steps: [
+        "User Upload",
+        "Node.js API",
+        "Azure Blob Storage",
+        "Flask Processing Service",
+        "Parser Engine",
+        "Database Storage",
+      ],
+    },
+    {
+      title: "GST & Compliance Workflow",
+      summary: "The compliance story is stronger when validation, reconciliation, and output are shown as one system.",
+      steps: [
+        "Invoice / Ledger Input",
+        "Validation Layer",
+        "Classification Rules",
+        "Reconciliation Engine",
+        "Return / Report Output",
+      ],
+    },
+    {
+      title: "Authentication System",
+      summary: "The auth service reads more credibly when token issuance and session ownership are visible.",
+      steps: [
+        "Signup / Login Request",
+        "Identity Validation",
+        "JWT + CSRF Issue",
+        "Redis Session Tracking",
+        "Protected API Access",
+      ],
+    },
+    {
+      title: "Pilot Logbook SaaS",
+      summary: "This product benefits from showing how billing, validation, and role-based flows connect.",
+      steps: [
+        "Flight Entry UI",
+        "Backend API",
+        "Validation + Calculations",
+        "Subscription / Role Checks",
+        "Logbook + Analytics",
+      ],
     },
   ],
   socialLinks: [

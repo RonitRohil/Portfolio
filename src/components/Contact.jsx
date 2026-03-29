@@ -77,7 +77,7 @@ export default function Contact() {
   return (
     <section id="contact" className="border-t border-white/10 px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading index="07" title="Contact" eyebrow="Let's build something." />
+        <SectionHeading index="09" title="Contact" eyebrow="Let's build something." />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="rounded-[2rem] border border-white/10 bg-panel/75 p-7">
@@ -93,22 +93,6 @@ export default function Contact() {
               >
                 <Mail size={18} className="text-lime" />
                 <span>{siteContent.email}</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ronitjain0402/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-paper/78 transition hover:text-lime"
-              >
-                linkedin.com/in/ronitjain0402
-              </a>
-              <a
-                href="https://github.com/RonitRohil"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-paper/78 transition hover:text-lime"
-              >
-                github.com/RonitRohil
               </a>
             </div>
 
@@ -199,14 +183,15 @@ export default function Contact() {
                 {isSubmitting ? "Sending..." : "Send Message"} <ArrowRight size={17} />
               </button>
 
-              <p
-                className={`text-sm ${
-                  status.type === "error" ? "text-rose-300" : "text-paper/60"
-                }`}
-              >
-                {status.message ||
-                  "Set VITE_FORMSPREE_ENDPOINT to enable direct form submission without the mail client fallback."}
-              </p>
+              {status.message ? (
+                <p
+                  className={`text-sm ${
+                    status.type === "error" ? "text-rose-300" : "text-paper/60"
+                  }`}
+                >
+                  {status.message}
+                </p>
+              ) : null}
             </form>
           </Reveal>
         </div>

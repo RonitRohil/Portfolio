@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <section id="projects" className="border-t border-white/10 px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading index="05" title="Projects" eyebrow="Shipping useful systems, not just demos." />
+        <SectionHeading index="06" title="Projects" eyebrow="Shipping useful systems, not just demos." />
 
         <div className="mt-14 space-y-8">
           {siteContent.projects.map((project, index) => (

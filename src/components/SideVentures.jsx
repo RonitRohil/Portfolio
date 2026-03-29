@@ -13,7 +13,7 @@ export default function SideVentures() {
   return (
     <section id="ventures" className="border-t border-white/10 px-4 py-24 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading index="06" title="Side Ventures" eyebrow="The products I keep coming back to after work." />
+        <SectionHeading index="07" title="Side Ventures" eyebrow="The products I keep coming back to after work." />
 
         <Reveal className="mt-10 max-w-3xl text-lg leading-8 text-paper/72">
           {siteContent.venturesIntro}

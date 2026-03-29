@@ -4,8 +4,10 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
+import Highlights from "./components/Highlights";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import OpenSource from "./components/OpenSource";
 import Projects from "./components/Projects";
 import SideVentures from "./components/SideVentures";
 import Skills from "./components/Skills";
@@ -22,7 +24,15 @@ function App() {
   });
 
   useEffect(() => {
-    const sectionIds = ["hero", "about", "experience", "skills", "projects", "contact"];
+    const sectionIds = [
+      "hero",
+      "about",
+      "experience",
+      "skills",
+      "projects",
+      "open-source",
+      "contact",
+    ];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -101,8 +111,10 @@ function App() {
         <About />
         <Experience />
         <Skills />
+        <Highlights />
         <Projects />
         <SideVentures />
+        <OpenSource />
         <Contact />
       </main>
       <Footer />
