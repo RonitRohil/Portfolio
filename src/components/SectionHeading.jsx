@@ -10,7 +10,7 @@ export default function SectionHeading({ index, title, eyebrow, align = "left" }
       className={align === "center" ? "text-center" : ""}
     >
       <p className="font-mono text-xs uppercase tracking-[0.32em] text-lime/80">
-        {index} - {title}
+        {index ? `${index} - ` : ""}{title}
       </p>
       {eyebrow ? (
         <p className="mt-3 font-serif text-2xl italic text-paper/75">{eyebrow}</p>

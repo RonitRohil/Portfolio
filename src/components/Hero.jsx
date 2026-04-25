@@ -61,11 +61,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.24 }}
-            className="mt-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 font-mono text-xs uppercase tracking-[0.26em] text-paper/75"
+            className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <MapPin size={14} className="text-lime" />
-            <span>
-              {siteContent.location} · {siteContent.availability}
+            <span className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-3 font-mono text-xs uppercase tracking-[0.26em] text-paper/75">
+              <MapPin size={14} className="text-lime" />
+              {siteContent.location}
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-lime/35 bg-lime/10 px-4 py-3 font-mono text-xs uppercase tracking-[0.26em] text-lime">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-lime" />
+              Open to Work
             </span>
           </motion.div>
 

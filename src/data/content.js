@@ -9,13 +9,13 @@ export const navLinks = [
   { id: "contact", label: "Contact" },
 ];
 
-export const heroTech = ["Node.js", "JavaScript", "PostgreSQL", "Azure", "Python"];
+export const heroTech = ["Node.js", "PostgreSQL", "Python", "Redis", "Azure", "JavaScript"];
 
 export const siteContent = {
   name: "Ronit Jain",
   title: "Backend Engineer",
   location: "Jaipur, Rajasthan",
-  availability: "Open to Remote",
+  availability: "Open to Work · Remote",
   email: "ronitrohil@gmail.com",
   tagline: ["Backend Engineer.", "Indie Builder."],
   intro:
@@ -23,16 +23,16 @@ export const siteContent = {
   resumeUrl: withBase("resume/Ronit_Jain_Resume.pdf"),
   profileImage: withBase("profile.jpg"),
   about: [
-    "I'm Ronit Jain - a Backend Engineer based in Jaipur with 2+ years of experience building real-world products.",
-    "By day, I'm at AKSSAI ProjExel working on FINAC - a full-featured financial accounting SaaS. I've shipped everything from bank statement parsers and GST filing pipelines to authentication systems and compliance modules.",
-    "By night, I build my own products: a pilot logbook SaaS, an aviation exam prep platform, and a fintech-focused static website for a mutual fund company. I'm obsessed with the end-to-end - from API design to deployment to the product itself.",
-    "I graduated from DA-IICT with a B.Tech in ICT (2024). When I'm not building, I'm designing in Figma or editing video.",
+    "I'm Ronit Jain - a Backend Engineer based in Jaipur with 2+ years of experience building production systems used by real clients every day.",
+    "Most recently at AKSSAI ProjExel, I worked on FINAC — a cloud-based financial accounting SaaS for chartered accountants and SMEs across India. I shipped bank statement parsers, GST filing pipelines, compliance modules, and authentication systems. I also resolved production-level crises: a Redis TCP exhaustion that had 28,000+ stuck connections, and a RAM exhaustion issue that took 10 days to trace and fix with ExcelJS streaming.",
+    "Outside work I build my own products: a pilot logbook SaaS, an aviation exam prep platform, and a fintech-focused static website for a mutual fund company. I care about the full picture — API design, system architecture, deployment, and the product itself.",
+    "I graduated from DA-IICT (Gandhinagar) with a B.Tech in ICT (2024). I'm currently looking for my next backend engineering role — fintech, infrastructure, and AI pipelines are where I want to go.",
   ],
   stats: [
     { value: "2+", label: "Years of professional experience" },
     { value: "10+", label: "Production APIs shipped" },
     { value: "3", label: "Indie products in development" },
-    { value: "200+", label: "Educational videos created" },
+    { value: "5+", label: "Production incidents resolved" },
   ],
   education: [
     {
@@ -58,7 +58,7 @@ export const siteContent = {
     {
       role: "Software Engineer",
       company: "AKSSAI ProjExel (STCO Consulting LLP)",
-      period: "Jan 2024 - Present",
+      period: "Jan 2024 - Apr 2026",
       location: "Jaipur, Rajasthan",
       summary:
         "FINAC is a cloud-based financial accounting SaaS serving chartered accountants and SMEs across India. I work as a backend engineer on the FINAC platform, building and maintaining production APIs used daily by real clients.",
@@ -121,8 +121,11 @@ export const siteContent = {
       items: [
         ["Express.js", "working"],
         ["Flask", "proficient"],
+        ["Spring Boot", "learning"],
         ["Pandas", "working"],
         ["pdfplumber", "working"],
+        ["ExcelJS", "working"],
+        ["Bull", "working"],
         ["Mongoose", "working"],
       ],
     },
@@ -158,19 +161,23 @@ export const siteContent = {
         ["RESTful APIs", "proficient"],
         ["Microservices", "working"],
         ["JWT / CSRF Auth", "proficient"],
+        ["Queue Systems", "working"],
         ["CORS", "proficient"],
         ["File Parsing", "proficient"],
         ["Caching", "working"],
+        ["WebSockets", "working"],
         ["Subscription Management", "working"],
       ],
     },
   ],
   engineeringHighlights: [
-    "Built a multi-format bank parser supporting PDF, CSV, and Excel ingestion flows.",
-    "Automated GST workflows across reconciliation, filing, and compliance modules.",
-    "Designed reusable JWT plus CSRF authentication flows across multiple systems.",
-    "Shipped backend systems for subscriptions, parsing, reporting, and reconciliation.",
-    "Resolved production-facing security issues including CORS and authorization gaps.",
+    "Diagnosed and fixed a Redis TCP exhaustion — 28,233 stuck connections down to 35 via sysctl tuning, restoring 8 Bull queue workers.",
+    "Traced and resolved a RAM exhaustion bug over 10 days — rebuilt Excel download pipeline with ExcelJS streaming and chunked writes.",
+    "Built a multi-format bank statement parser supporting PDF, CSV, and Excel with dynamic column detection and per-transaction confidence scoring.",
+    "Optimized PostgreSQL queries from 2-5s to under 0.5s using recursive stored procedures and targeted indexing.",
+    "Automated GST workflows across GSTR-1 filing, GSTR-2A/2B reconciliation, E-Way Bill, and E-Invoicing modules.",
+    "Designed reusable JWT plus CSRF authentication flows with Redis session tracking, used across multiple production systems.",
+    "Resolved production-facing security issues including CORS misconfiguration, prototype pollution, and authorization gaps.",
   ],
   projects: [
     {
@@ -407,6 +414,14 @@ export const siteContent = {
         "Logbook + Analytics",
       ],
     },
+  ],
+  contactIntro:
+    "I'm actively looking for my next backend engineering role — fintech, infrastructure, and AI pipelines are where I want to go. I'm also open to freelance API work and interesting technical conversations.",
+  contactSubjects: [
+    "Job Opportunity",
+    "Freelance Project",
+    "General Enquiry",
+    "Just saying hi",
   ],
   socialLinks: [
     {

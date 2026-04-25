@@ -14,7 +14,7 @@ const iconMap = {
 const initialState = {
   name: "",
   email: "",
-  subject: "General Enquiry",
+  subject: "Job Opportunity",
   message: "",
 };
 
@@ -82,8 +82,7 @@ export default function Contact() {
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="rounded-[2rem] border border-white/10 bg-panel/75 p-7">
             <p className="max-w-xl text-lg leading-8 text-paper/74">
-              I'm open to interesting backend engineering projects, freelance API work,
-              and conversations about products you're building.
+              {siteContent.contactIntro}
             </p>
 
             <div className="mt-8 space-y-4">
@@ -155,9 +154,9 @@ export default function Contact() {
                   onChange={handleChange}
                   className="rounded-2xl border border-white/10 bg-ink px-4 py-3 text-paper outline-none transition focus:border-lime"
                 >
-                  <option>General Enquiry</option>
-                  <option>Freelance Project</option>
-                  <option>Just saying hi</option>
+                  {siteContent.contactSubjects.map((s) => (
+                    <option key={s}>{s}</option>
+                  ))}
                 </select>
               </label>
 

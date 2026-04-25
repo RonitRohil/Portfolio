@@ -75,7 +75,6 @@ export default function OpenSource() {
 
         <div className="mt-16">
           <SectionHeading
-            index="08"
             title="Architecture Snapshots"
             eyebrow="A few systems read better when the flow is visible."
           />
