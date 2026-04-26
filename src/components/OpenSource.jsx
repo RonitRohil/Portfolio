@@ -14,9 +14,8 @@ export default function OpenSource() {
         />
 
         <Reveal className="mt-10 max-w-3xl text-lg leading-8 text-paper/72">
-          Public engineering work adds a different kind of credibility. This section is
-          designed to make the code-facing side of the portfolio as visible as the product
-          work itself.
+          Most of my production work lives in private repos. These are public projects where
+          the code is visible — built for real use, not just GitHub stats.
         </Reveal>
 
         <div className="mt-10 grid gap-5 xl:grid-cols-2">

@@ -17,9 +17,9 @@ export const siteContent = {
   location: "Jaipur, Rajasthan",
   availability: "Open to Work · Remote",
   email: "ronitrohil@gmail.com",
-  tagline: ["Backend Engineer.", "Indie Builder."],
+  tagline: ["Backend Engineer.", "FinTech Systems."],
   intro:
-    "I build production-grade APIs, data pipelines, and scalable backend systems - and launch products on the side.",
+    "I build production-grade APIs, financial data pipelines, and backend infrastructure — mostly for fintech and accounting SaaS.",
   resumeUrl: withBase("resume/Ronit_Jain_Resume.pdf"),
   profileImage: withBase("profile.jpg"),
   about: [
@@ -32,7 +32,7 @@ export const siteContent = {
     { value: "2+", label: "Years of professional experience" },
     { value: "10+", label: "Production APIs shipped" },
     { value: "3", label: "Indie products in development" },
-    { value: "5+", label: "Production incidents resolved" },
+    { value: "28K→35", label: "Redis connections: crisis diagnosed & fixed" },
   ],
   education: [
     {
@@ -57,11 +57,11 @@ export const siteContent = {
   experience: [
     {
       role: "Software Engineer",
-      company: "AKSSAI ProjExel (STCO Consulting LLP)",
-      period: "Jan 2024 - Apr 2026",
+      company: "AKSSAI ProjExel",
+      period: "May 2023 - Apr 2026",
       location: "Jaipur, Rajasthan",
       summary:
-        "FINAC is a cloud-based financial accounting SaaS serving chartered accountants and SMEs across India. I work as a backend engineer on the FINAC platform, building and maintaining production APIs used daily by real clients.",
+        "Started as Software Developer Intern (May 2023), promoted to full-time Software Engineer (Jan 2024). FINAC is a cloud-based financial accounting SaaS serving chartered accountants and SMEs across India. Named \"key person\" and \"role model\" by manager Lokesh Jain.",
       stack: [
         "Node.js",
         "Flask",
@@ -73,6 +73,7 @@ export const siteContent = {
         "JIRA",
       ],
       bullets: [
+        "⭐ Star Performer — Q1 2025. Recognised by management for consistent delivery and technical ownership across the FINAC platform.",
         "Built a multi-format bank statement analyzer supporting PDF, Excel, and CSV using Python, Flask, Pandas, and pdfplumber with dynamic header detection, metadata extraction, and per-transaction confidence scoring.",
         "Integrated Pennyless API for account and IFSC validation plus UPI ID verification for transaction enrichment.",
         "Developed GSTR-1 filing and GSTR-2A/2B reconciliation modules with automated mismatch detection.",
@@ -80,18 +81,7 @@ export const siteContent = {
         "Built JWT and CSRF authentication with session tracking, email plus Google plus Apple signup flows, and duplicate detection.",
         "Shipped Recruitment Tracker, TDS Master, Timesheet Reporting, and Client Meetup Checklist modules.",
         "Resolved security issues including CORS misconfiguration, prototype pollution, and client-assign authorization gaps.",
-      ],
-    },
-    {
-      role: "Software Developer Intern",
-      company: "STCO Consulting LLP",
-      period: "May 2023 - Dec 2023",
-      location: "Jaipur, Rajasthan",
-      summary:
-        "Summer internship that converted into a full-time backend engineering role.",
-      bullets: [
-        "Built the Job Disbursement Module with 6 REST APIs for add, update, list, shared list, fetch by ID, and approval flows.",
-        "Worked with Node.js and PostgreSQL while aligning API behavior with internal product requirements.",
+        "Built the Job Disbursement Module with 6 REST APIs during internship — converted to full-time role within 8 months.",
       ],
     },
   ],
@@ -167,6 +157,13 @@ export const siteContent = {
         ["Caching", "working"],
         ["WebSockets", "working"],
         ["Subscription Management", "working"],
+      ],
+    },
+    {
+      title: "Certifications",
+      items: [
+        ["AZ-900 · Azure Fundamentals", "proficient"],
+        ["AWS CLF-C02 · Cloud Practitioner", "proficient"],
       ],
     },
   ],
@@ -265,6 +262,7 @@ export const siteContent = {
       ],
       status: "Live",
       tone: "lime",
+      liveUrl: "https://sbprimewealth.com",
     },
     {
       title: "Flask Authentication System",
@@ -371,7 +369,7 @@ export const siteContent = {
   architectureFlows: [
     {
       title: "Bank Statement Analyzer",
-      summary: "This is the signature system where the data pipeline matters as much as the feature list.",
+      summary: "A multi-service pipeline — uploads go through Node.js to Azure Blob Storage, then a Python Flask microservice parses and scores each transaction per bank format.",
       steps: [
         "User Upload",
         "Node.js API",
@@ -383,7 +381,7 @@ export const siteContent = {
     },
     {
       title: "GST & Compliance Workflow",
-      summary: "The compliance story is stronger when validation, reconciliation, and output are shown as one system.",
+      summary: "Invoice and ledger data flows through a validation layer, gets classified by GST rules, reconciled against GSTR-2A/2B, and outputs filing-ready returns.",
       steps: [
         "Invoice / Ledger Input",
         "Validation Layer",
@@ -394,7 +392,7 @@ export const siteContent = {
     },
     {
       title: "Authentication System",
-      summary: "The auth service reads more credibly when token issuance and session ownership are visible.",
+      summary: "Signup and login requests hit an identity validation layer that issues JWT + CSRF tokens and tracks active sessions in Redis for stateless API access.",
       steps: [
         "Signup / Login Request",
         "Identity Validation",
@@ -405,7 +403,7 @@ export const siteContent = {
     },
     {
       title: "Pilot Logbook SaaS",
-      summary: "This product benefits from showing how billing, validation, and role-based flows connect.",
+      summary: "Flight entries go through a backend API for validation and hour calculations, pass through subscription and role checks, then persist to the logbook and analytics store.",
       steps: [
         "Flight Entry UI",
         "Backend API",
@@ -443,6 +441,11 @@ export const siteContent = {
       label: "Instagram",
       href: "https://www.instagram.com/ronitrohilrj/",
       icon: "Instagram",
+    },
+    {
+      label: "Topmate",
+      href: "https://topmate.io/ronit_jain04",
+      icon: "CalendarDays",
     },
   ],
 };

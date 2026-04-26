@@ -40,7 +40,7 @@ export default function Navbar({ activeSection, resumeUrl }) {
             RJ
           </span>
           <span className="hidden font-mono text-xs uppercase tracking-[0.28em] text-paper/70 sm:block">
-            Backend Engineer
+            Backend Engineer · DA-IICT '24
           </span>
         </button>
 

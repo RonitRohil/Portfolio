@@ -20,11 +20,7 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading index="04" title="Skills" eyebrow="A backend-first toolkit with room to explore." />
 
-        <Reveal className="mt-12 rounded-[1.75rem] border border-white/10 bg-white/5 p-5 font-mono text-[11px] uppercase tracking-[0.28em] text-paper/55">
-          Skill tags include a subtle proficiency bar: Proficient, Working knowledge, and Learning.
-        </Reveal>
-
-        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {siteContent.skillGroups.map((group) => (
             <Reveal
               key={group.title}

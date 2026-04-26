@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Github, Instagram, Linkedin, Code2, Mail } from "lucide-react";
+import { ArrowRight, Github, Instagram, Linkedin, Code2, Mail, CalendarDays } from "lucide-react";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { siteContent } from "../data/content";
@@ -9,6 +9,7 @@ const iconMap = {
   Linkedin,
   Code2,
   Instagram,
+  CalendarDays,
 };
 
 const initialState = {
