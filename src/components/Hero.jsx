@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowDown, MapPin } from "lucide-react";
-import { useEffect, useState } from "react";
 import { heroTech, siteContent } from "../data/content";
 
 function scrollToId(id) {
@@ -8,16 +7,6 @@ function scrollToId(id) {
 }
 
 export default function Hero() {
-  const [techIndex, setTechIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setTechIndex((current) => (current + 1) % heroTech.length);
-    }, 1800);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
   return (
     <section
       id="hero"
@@ -29,15 +18,6 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="order-2 lg:order-1">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-mono text-xs uppercase tracking-[0.35em] text-lime/85"
-          >
-            01 - Hero
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,20 +86,19 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-5 flex min-h-[2.5rem] items-center overflow-hidden"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-5 flex flex-wrap gap-2"
           >
-            <motion.p
-              key={heroTech[techIndex]}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="font-mono text-lg text-lime sm:text-xl"
-            >
-              {heroTech[techIndex]}
-            </motion.p>
+            {heroTech.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-lime/25 bg-lime/8 px-4 py-2 font-mono text-xs text-lime"
+              >
+                {tech}
+              </span>
+            ))}
           </motion.div>
         </div>
 

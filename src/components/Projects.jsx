@@ -62,6 +62,17 @@ export default function Projects() {
                   <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-lime/80">
                     {project.status}
                   </p>
+
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2 text-sm text-paper transition hover:border-lime hover:bg-lime hover:text-ink"
+                    >
+                      View Live →
+                    </a>
+                  ) : null}
                 </div>
               </article>
             </Reveal>

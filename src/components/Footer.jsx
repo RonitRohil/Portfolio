@@ -1,4 +1,4 @@
-import { Github, Instagram, Linkedin, Code2 } from "lucide-react";
+import { Github, Instagram, CalendarDays, Linkedin, Code2 } from "lucide-react";
 import { siteContent } from "../data/content";
 
 const iconMap = {
@@ -6,6 +6,7 @@ const iconMap = {
   Linkedin,
   Code2,
   Instagram,
+  CalendarDays,
 };
 
 export default function Footer() {
