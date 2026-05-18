@@ -1,120 +1,92 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
-import { useEffect, useState } from "react";
-import { navLinks } from "../data/content";
+import { useState, useEffect } from 'react';
+import { siteContent } from '../data/content';
 
-function scrollToId(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+const links = [
+  { id: 'about',       label: 'about' },
+  { id: 'experience',  label: 'experience' },
+  { id: 'skills',      label: 'skills' },
+  { id: 'projects',    label: 'projects' },
+  { id: 'open-source', label: 'open-source' },
+  { id: 'contact',     label: 'contact' },
+];
 
-export default function Navbar({ activeSection, resumeUrl }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const go = id => {
+  const el = document.getElementById(id);
+  if (el) window.scrollTo({ top: el.offsetTop - 68, behavior: 'smooth' });
+};
 
+export default function Navbar({ visible, onOpenPalette }) {
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 50);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const h = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', h);
+    return () => window.removeEventListener('scroll', h);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [activeSection]);
-
   return (
-    <header className="sticky top-0 z-40 px-4 pt-4 sm:px-6">
-      <div
-        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full border px-4 py-3 transition-all duration-300 sm:px-6 ${
-          isScrolled
-            ? "border-white/10 bg-ink/80 shadow-glow backdrop-blur-md"
-            : "border-transparent bg-transparent"
-        }`}
-      >
-        <button
-          type="button"
-          onClick={() => scrollToId("hero")}
-          className="flex items-center gap-3 text-left"
-        >
-          <span className="grid h-11 w-11 place-items-center rounded-full border border-lime/40 bg-lime/10 font-display text-lg font-bold text-paper">
-            RJ
-          </span>
-          <span className="hidden font-mono text-xs uppercase tracking-[0.28em] text-paper/70 sm:block">
-            Backend Engineer · DA-IICT '24
-          </span>
-        </button>
-
-        <nav className="hidden items-center gap-7 md:flex">
-          {navLinks.map((link) => (
+    <nav style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+      background: scrolled ? 'rgba(8,12,16,0.96)' : 'transparent',
+      borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
+      backdropFilter: scrolled ? 'blur(14px)' : 'none',
+      transition: 'all 0.35s ease',
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateY(0)' : 'translateY(-16px)',
+    }}>
+      <div style={{ maxWidth: '1120px', margin: '0 auto', padding: '0 32px', height: '62px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        {/* Logo */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '13px', fontFamily: 'var(--font)', cursor: 'default' }}>
+          <span style={{ color: 'var(--text-dim)' }}>~/</span>
+          <span style={{ color: 'var(--text)' }}>ronit-jain</span>
+          <span style={{ color: 'var(--text-muted)', margin: '0 4px' }}>$</span>
+          <span style={{ color: 'var(--green)', animation: 'termBlink 1.2s step-end infinite' }}>▌</span>
+        </div>
+        {/* Links */}
+        <div className="mt-nav-links" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          {links.map(l => (
             <button
-              key={link.id}
-              type="button"
-              onClick={() => scrollToId(link.id)}
-              className={`text-sm transition ${
-                activeSection === link.id ? "text-lime" : "text-paper/72 hover:text-paper"
-              }`}
+              key={l.id}
+              onClick={() => go(l.id)}
+              style={{
+                background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '12px',
+                fontFamily: 'var(--font)', cursor: 'pointer', letterSpacing: '0.04em',
+                padding: '6px 8px', borderRadius: '3px', transition: 'color 0.2s, background 0.2s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.color = 'var(--green)'; e.currentTarget.style.background = 'var(--green-dim)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.background = 'transparent'; }}
             >
-              {link.label}
+              ./{l.label}
             </button>
           ))}
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2 text-sm text-paper transition hover:border-lime hover:bg-lime hover:text-ink md:inline-flex"
-          >
-            Resume <ArrowUpRight size={16} />
-          </a>
           <button
-            type="button"
-            onClick={() => setIsOpen((open) => !open)}
-            className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-paper md:hidden"
-            aria-label="Toggle navigation"
+            onClick={onOpenPalette}
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '5px',
+              padding: '5px 10px', background: 'var(--surface2)', border: '1px solid var(--border)',
+              borderRadius: '4px', fontFamily: 'var(--font)', fontSize: '11px', color: 'var(--text-dim)',
+              cursor: 'pointer', letterSpacing: '0.04em', transition: 'all 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--green)'; e.currentTarget.style.color = 'var(--green)'; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text-dim)'; }}
           >
-            {isOpen ? <X size={18} /> : <Menu size={18} />}
+            ⌘K
           </button>
+          <a
+            href={siteContent.resumeUrl}
+            target="_blank" rel="noreferrer"
+            style={{
+              padding: '6px 14px', background: 'var(--green-dim)',
+              color: 'var(--green)', border: '1px solid rgba(63,185,80,0.3)', borderRadius: '4px',
+              fontSize: '12px', fontFamily: 'var(--font)', textDecoration: 'none',
+              letterSpacing: '0.04em', transition: 'background 0.2s, border-color 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(63,185,80,0.2)'; e.currentTarget.style.borderColor = 'rgba(63,185,80,0.6)'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'var(--green-dim)'; e.currentTarget.style.borderColor = 'rgba(63,185,80,0.3)'; }}
+          >
+            resume ↗
+          </a>
         </div>
       </div>
-
-      <AnimatePresence>
-        {isOpen ? (
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2 }}
-            className="mx-auto mt-3 max-w-6xl rounded-3xl border border-white/10 bg-panel/95 p-4 shadow-2xl backdrop-blur"
-          >
-            <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  type="button"
-                  onClick={() => scrollToId(link.id)}
-                  className={`rounded-2xl px-4 py-3 text-left text-sm ${
-                    activeSection === link.id
-                      ? "bg-lime text-ink"
-                      : "bg-white/5 text-paper/80"
-                  }`}
-                >
-                  {link.label}
-                </button>
-              ))}
-              <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-lime/40 px-4 py-3 text-sm text-paper"
-              >
-                Resume <ArrowUpRight size={16} />
-              </a>
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </header>
+    </nav>
   );
 }

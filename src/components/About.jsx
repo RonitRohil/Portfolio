@@ -1,49 +1,74 @@
-import Reveal from "./Reveal";
-import SectionHeading from "./SectionHeading";
-import { siteContent } from "../data/content";
+import Reveal from './Reveal';
+import SectionHeader from './utils/SectionHeader';
+import TermWindow from './utils/TermWindow';
+import { siteContent } from '../data/content';
 
 export default function About() {
+  const d = siteContent;
   return (
-    <section id="about" className="border-t border-white/10 px-4 py-24 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading index="02" title="About" eyebrow="Building the systems behind the product." />
+    <section id="about" style={{ padding: '80px 32px', maxWidth: '1120px', margin: '0 auto' }}>
+      <SectionHeader cmd="cat about.md" title="About" subtitle="Building the systems behind the product." />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <Reveal className="space-y-5">
-            {siteContent.about.map((paragraph) => (
-              <p key={paragraph} className="max-w-3xl text-lg leading-8 text-paper/74">
-                {paragraph}
+      <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 0.7fr', gap: '48px', alignItems: 'start' }}>
+        {/* Text */}
+        <Reveal>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {d.about.map((p, i) => (
+              <p key={i} style={{ color: i === 0 ? 'var(--text)' : 'var(--text-muted)', fontSize: '14px', lineHeight: '1.85' }}>
+                {i === 0 && <span style={{ color: 'var(--text-dim)' }}>{'// '}</span>}{p}
               </p>
             ))}
-          </Reveal>
+          </div>
+        </Reveal>
 
-          <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            {siteContent.stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className={`rounded-[1.75rem] border p-6 ${
-                  index % 2 === 0 ? "border-lime/20 bg-lime/10" : "border-white/10 bg-white/5"
-                }`}
-              >
-                <p className="font-display text-4xl font-bold text-paper">{stat.value}</p>
-                <p className="mt-2 text-sm uppercase tracking-[0.2em] text-paper/55">{stat.label}</p>
+        {/* Stats + Education */}
+        <Reveal delay={0.1}>
+          <TermWindow title="stats.json" glowColor="rgba(63,185,80,0.04)">
+            <div style={{ padding: '10px 14px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', fontSize: '11px', color: 'var(--text-dim)', fontFamily: 'var(--font)', letterSpacing: '0.08em' }}>
+              $ cat stats.json
+            </div>
+            <div style={{ padding: '16px' }}>
+              {d.stats.map((s, i) => (
+                <div key={i} style={{ display: 'flex', gap: '16px', alignItems: 'baseline', padding: '8px 0', borderBottom: i < d.stats.length - 1 ? '1px solid rgba(48,54,61,0.5)' : 'none' }}>
+                  <span style={{ fontFamily: 'var(--font)', fontSize: '1.4rem', fontWeight: 700, color: 'var(--green)', minWidth: '68px', letterSpacing: '-0.01em' }}>{s.value}</span>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '12px', lineHeight: 1.4 }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </TermWindow>
+
+          {/* Education */}
+          <div style={{ marginTop: '16px' }}>
+            <TermWindow title="education/" glowColor="rgba(63,185,80,0.04)">
+              <div style={{ padding: '10px 14px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', fontSize: '11px', color: 'var(--text-dim)', fontFamily: 'var(--font)', letterSpacing: '0.08em' }}>
+                $ ls education/
               </div>
-            ))}
-          </Reveal>
-        </div>
-
-        <Reveal className="mt-12 grid gap-4 md:grid-cols-3">
-          {siteContent.education.map((item) => (
-            <article
-              key={`${item.title}-${item.subtitle}`}
-              className="rounded-[1.5rem] border border-white/10 bg-panel/70 p-5"
-            >
-              <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-lime/80">{item.meta}</p>
-              <h3 className="mt-3 font-display text-2xl text-paper">{item.title}</h3>
-              <p className="mt-2 text-paper/72">{item.subtitle}</p>
-              <p className="mt-4 text-sm text-paper/52">{item.detail}</p>
-            </article>
-          ))}
+              <div style={{ padding: '8px 0' }}>
+                {d.education.map((e, i) => {
+                  const isDA = i === 0;
+                  return (
+                    <div key={i} style={{
+                      display: 'grid', gridTemplateColumns: '1fr auto', gap: '8px',
+                      padding: isDA ? '14px 16px' : '10px 16px', alignItems: 'center',
+                      borderBottom: i < d.education.length - 1 ? '1px solid rgba(48,54,61,0.3)' : 'none',
+                      background: isDA ? 'rgba(227,179,65,0.05)' : 'transparent',
+                      borderLeft: isDA ? '2px solid var(--yellow)' : '2px solid transparent',
+                    }}>
+                      <div>
+                        <div style={{ fontFamily: 'var(--font)', fontSize: isDA ? '14px' : '13px', color: isDA ? 'var(--yellow)' : 'var(--text)', fontWeight: 700, lineHeight: 1.3 }}>
+                          {isDA ? 'B.Tech ICT — DA-IICT, Gandhinagar' : e.title}
+                        </div>
+                        <div style={{ fontSize: '11px', color: isDA ? 'rgba(227,179,65,0.65)' : 'var(--text-muted)', marginTop: '3px', letterSpacing: '0.02em' }}>
+                          {isDA ? `Dhirubhai Ambani Institute of ICT · Tier-1 · ${e.meta}` : `${e.subtitle} · ${e.meta}`}
+                        </div>
+                      </div>
+                      <span style={{ fontFamily: 'var(--font)', fontSize: '12px', color: isDA ? 'var(--yellow)' : 'var(--green)', fontWeight: 600, whiteSpace: 'nowrap' }}>{e.detail}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </TermWindow>
+          </div>
         </Reveal>
       </div>
     </section>
