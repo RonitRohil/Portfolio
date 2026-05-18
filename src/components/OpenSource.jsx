@@ -1,109 +1,36 @@
-import { ArrowUpRight, Github } from "lucide-react";
-import Reveal from "./Reveal";
-import SectionHeading from "./SectionHeading";
-import { siteContent } from "../data/content";
+import Reveal from './Reveal';
+import SectionHeader from './utils/SectionHeader';
+import Tag from './utils/Tag';
+import { siteContent } from '../data/content';
 
 export default function OpenSource() {
+  const d = siteContent;
   return (
-    <section id="open-source" className="border-t border-white/10 px-4 py-24 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          index="08"
-          title="Open Source & Engineering Projects"
-          eyebrow="Code visibility, system thinking, and architecture in one place."
-        />
-
-        <Reveal className="mt-10 max-w-3xl text-lg leading-8 text-paper/72">
-          Most of my production work lives in private repos. These are public projects where
-          the code is visible — built for real use, not just GitHub stats.
-        </Reveal>
-
-        <div className="mt-10 grid gap-5 xl:grid-cols-2">
-          {siteContent.githubProjects.map((project) => (
-            <Reveal key={project.title}>
-              <article className="h-full rounded-[1.9rem] border border-white/10 bg-panel/80 p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-4xl">{project.emoji}</p>
-                    <h3 className="mt-4 font-display text-3xl text-paper">{project.title}</h3>
-                  </div>
-                  {project.github ? (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/10 px-4 py-2 text-sm text-paper transition hover:border-lime hover:bg-lime hover:text-ink"
-                    >
-                      <Github size={16} />
-                      Repo
-                      <ArrowUpRight size={15} />
-                    </a>
-                  ) : (
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.24em] text-paper/50">
-                      <Github size={14} />
-                      {project.githubLabel}
-                    </span>
-                  )}
+    <section id="open-source" style={{ padding: '80px 32px', maxWidth: '1120px', margin: '0 auto' }}>
+      <SectionHeader cmd="git log --all --author='RonitRohil' --oneline" title="Open Source" subtitle="Public repositories and experiments." />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+        {d.githubProjects.map((proj, i) => (
+          <Reveal key={proj.title} delay={i * 0.07}>
+            <a href={proj.url} target="_blank" rel="noreferrer" style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+              <div
+                style={{ height: '100%', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: '8px', padding: '20px', transition: 'all 0.25s ease', cursor: 'pointer' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(63,185,80,0.45)'; e.currentTarget.style.boxShadow = '0 0 24px rgba(63,185,80,0.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                  <span style={{ fontFamily: 'var(--font)', fontSize: '11px', color: 'var(--orange)' }}>{'>'}</span>
+                  <span style={{ fontFamily: 'var(--font)', fontSize: '11px', color: 'var(--text-dim)', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{proj.path}</span>
+                  <span style={{ fontFamily: 'var(--font)', fontSize: '10px', color: 'var(--blue)' }}>↗</span>
                 </div>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-white/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/60"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <h3 style={{ fontFamily: 'var(--font)', fontSize: '14px', fontWeight: 600, color: 'var(--text)', marginBottom: '8px', lineHeight: 1.4 }}>{proj.title}</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '12px', lineHeight: '1.7', marginBottom: '16px' }}>{proj.desc}</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                  {proj.stack.map(t => <Tag key={t}>{t}</Tag>)}
                 </div>
-
-                <p className="mt-5 leading-8 text-paper/74">{project.description}</p>
-
-                <ul className="mt-5 grid gap-3 text-paper/72">
-                  {project.features.map((feature) => (
-                    <li key={feature} className="flex gap-3">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-lime" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-
-        <div className="mt-16">
-          <SectionHeading
-            title="Architecture Snapshots"
-            eyebrow="A few systems read better when the flow is visible."
-          />
-
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
-            {siteContent.architectureFlows.map((flow) => (
-              <Reveal key={flow.title}>
-                <article className="rounded-[1.9rem] border border-white/10 bg-white/5 p-6">
-                  <h3 className="font-display text-3xl text-paper">{flow.title}</h3>
-                  <p className="mt-3 max-w-2xl text-paper/68">{flow.summary}</p>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-3">
-                    {flow.steps.map((step, index) => (
-                      <div key={`${flow.title}-${step}`} className="contents">
-                        <span className="rounded-full border border-lime/20 bg-ink px-4 py-2 font-mono text-xs text-paper">
-                          {step}
-                        </span>
-                        {index < flow.steps.length - 1 ? (
-                          <span className="font-mono text-xs uppercase tracking-[0.26em] text-lime/70">
-                            →
-                          </span>
-                        ) : null}
-                      </div>
-                    ))}
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+              </div>
+            </a>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

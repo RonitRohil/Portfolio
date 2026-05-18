@@ -1,39 +1,16 @@
-import { Github, Instagram, CalendarDays, Linkedin, Code2 } from "lucide-react";
-import { siteContent } from "../data/content";
-
-const iconMap = {
-  Github,
-  Linkedin,
-  Code2,
-  Instagram,
-  CalendarDays,
-};
-
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 px-4 py-10 sm:px-6">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="text-paper/74">Built by Ronit Jain - 2026</p>
-          <p className="mt-1 text-sm text-paper/45">Jaipur, Rajasthan, India</p>
+    <footer style={{ padding: '28px 32px', maxWidth: '1120px', margin: '0 auto' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+        <div style={{ fontFamily: 'var(--font)', fontSize: '12px', color: 'var(--text-dim)' }}>
+          <span style={{ color: 'var(--green)' }}>~/ronit-jain</span>
+          <span> · git commit -m "portfolio v2.0.0" · May 2026</span>
         </div>
-
-        <div className="flex items-center gap-3">
-          {siteContent.socialLinks.map((link) => {
-            const Icon = iconMap[link.icon];
-            return (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-paper/70 transition hover:border-lime hover:text-lime"
-                aria-label={link.label}
-              >
-                <Icon size={18} />
-              </a>
-            );
-          })}
+        <div style={{ fontFamily: 'var(--font)', fontSize: '12px', color: 'var(--text-dim)' }}>
+          <span>Built with </span>
+          <span style={{ color: 'var(--green)' }}>React</span>
+          <span> · Designed in </span>
+          <span style={{ color: 'var(--blue)' }}>Midnight Terminal</span>
         </div>
       </div>
     </footer>

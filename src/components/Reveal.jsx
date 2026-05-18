@@ -1,15 +1,15 @@
-import { motion } from "framer-motion";
+import { useReveal } from './utils/useReveal';
 
-export default function Reveal({ children, className = "", delay = 0 }) {
+export default function Reveal({ children, className, delay = 0, style = {} }) {
+  const [ref, visible] = useReveal();
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
-      viewport={{ once: true, amount: 0.2 }}
-      className={className}
-    >
+    <div ref={ref} className={className} style={{
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateY(0)' : 'translateY(18px)',
+      transition: `opacity 0.55s ease ${delay}s, transform 0.55s ease ${delay}s`,
+      ...style,
+    }}>
       {children}
-    </motion.div>
+    </div>
   );
 }
