@@ -30,7 +30,7 @@ export const siteContent = {
   ],
   stats: [
     { value: "2+", label: "Years of professional experience" },
-    { value: "10+", label: "Production APIs shipped" },
+    { value: "10+", label: "Modules shipped" },
     { value: "3", label: "Indie products in development" },
     { value: "28K→35", label: "Redis connections: crisis diagnosed & fixed" },
   ],
@@ -58,10 +58,10 @@ export const siteContent = {
     {
       role: "Software Engineer",
       company: "AKSSAI ProjExel",
-      period: "May 2023 - Apr 2026",
+      period: "May 2023 – Mar 2026",
       location: "Jaipur, Rajasthan",
       summary:
-        "Started as Software Developer Intern (May 2023), promoted to full-time Software Engineer (Jan 2024). FINAC is a cloud-based financial accounting SaaS serving chartered accountants and SMEs across India. Named \"key person\" and \"role model\" by manager Lokesh Jain.",
+        "Started as Summer Intern (May 2023). Rejoined as Winter Intern (Jan 2024). Promoted to full-time Software Engineer (July 2024). FINAC is a cloud-based financial accounting SaaS serving chartered accountants and SMEs across India. Named \"key person\" and \"role model\" by manager Lokesh Jain.",
       stack: [
         "Node.js",
         "Flask",
@@ -78,7 +78,7 @@ export const siteContent = {
         "Integrated Pennyless API for account and IFSC validation plus UPI ID verification for transaction enrichment.",
         "Developed GSTR-1 filing and GSTR-2A/2B reconciliation modules with automated mismatch detection.",
         "Implemented E-Way Bill generation, E-Invoicing, and MineTrac report generation modules.",
-        "Built JWT and CSRF authentication with session tracking, email plus Google plus Apple signup flows, and duplicate detection.",
+        "Built JWT and CSRF authentication with session tracking for email/password and mobile OTP login flows.",
         "Shipped Recruitment Tracker, TDS Master, Timesheet Reporting, and Client Meetup Checklist modules.",
         "Resolved security issues including CORS misconfiguration, prototype pollution, and client-assign authorization gaps.",
         "Built the Job Disbursement Module with 6 REST APIs during internship — converted to full-time role within 8 months.",
@@ -288,7 +288,7 @@ export const siteContent = {
         "Subscription management backend with Stripe integration",
         "Role-based access for instructors and students",
       ],
-      status: "In Development · Backend complete",
+      status: "Freelance Project",
       tone: "orange",
     },
     {
@@ -304,7 +304,7 @@ export const siteContent = {
         "Mentor-student connection system",
         "Community forum and role-based subscriptions",
       ],
-      status: "In Development",
+      status: "Freelance Project",
       tone: "blue",
     },
     {
@@ -327,16 +327,14 @@ export const siteContent = {
       path: "~/auth/service/app.py",
       stack: ["Flask", "JWT", "Python", "PostgreSQL", "Redis"],
       metric: "5 auth flows · zero breaches",
-      description: "Reusable authentication microservice used across FINAC modules and side projects.",
+      description: "Reusable authentication microservice built for a freelance client, supporting email/password and OTP login with JWT + CSRF protection.",
       features: [
         "Email + mobile login",
         "JWT + CSRF token generation and validation",
-        "Session tracking with Redis",
-        "Email, Google OAuth, and Apple Sign-In",
-        "Duplicate detection and bcrypt hashing",
+        "Session tracking",
       ],
-      status: "Production",
-      production: true,
+      status: "Freelance",
+      production: false,
       tone: "orange",
     },
   ],
@@ -354,13 +352,13 @@ export const siteContent = {
     {
       title: "Tachobuddy",
       description: "Subscription-based flight logging for pilots.",
-      status: "In Development",
+      status: "Freelance Project",
       icon: "Plane",
     },
     {
       title: "Pilots Prep Club",
       description: "DGCA exam prep with mock tests, analytics, and mentorship.",
-      status: "In Development",
+      status: "Freelance Project",
       icon: "BookOpen",
     },
     {
