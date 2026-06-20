@@ -17,16 +17,17 @@ export const siteContent = {
   location: "Jaipur, Rajasthan",
   availability: "Open to Work · Remote",
   email: "ronitrohil@gmail.com",
-  tagline: ["Backend Engineer.", "FinTech Systems."],
+  tagline: ["Backend Engineer.", "FinTech & AI Systems."],
   intro:
-    "I build production-grade APIs, financial data pipelines, and backend infrastructure — mostly for fintech and accounting SaaS.",
+    "I build production-grade APIs, financial data pipelines, and AI systems — RAG and tool-calling agents — mostly for fintech and accounting SaaS.",
   resumeUrl: withBase("resume/Ronit_Jain_Resume.pdf"),
   profileImage: withBase("profile.jpg"),
   about: [
     "I'm Ronit Jain - a Backend Engineer based in Jaipur with 2+ years of experience building production systems used by real clients every day.",
     "Most recently at AKSSAI ProjExel, I worked on FINAC — a cloud-based financial accounting SaaS for chartered accountants and SMEs across India. I shipped bank statement parsers, GST filing pipelines, compliance modules, and authentication systems. I also resolved production-level crises: a Redis TCP exhaustion that had 28,000+ stuck connections, and a RAM exhaustion issue that took 10 days to trace and fix with ExcelJS streaming.",
     "Outside work I build my own products: a pilot logbook SaaS, an aviation exam prep platform, and a fintech-focused static website for a mutual fund company. I care about the full picture — API design, system architecture, deployment, and the product itself.",
-    "I graduated from DA-IICT (Gandhinagar) with a B.Tech in ICT (2024). I'm currently looking for my next backend engineering role — fintech, infrastructure, and AI pipelines are where I want to go.",
+    "Lately I've gone deep on AI engineering — I built Artha, a finance RAG assistant that grew into a tool-calling agent with streaming, evals, broker sync, and a multi-user Postgres backend. It's where I closed the gap from 'I understand RAG' to 'I've shipped agentic AI.'",
+    "I graduated from DA-IICT (Gandhinagar) with a B.Tech in ICT (2024). I'm currently looking for my next role — fintech backend, infrastructure, and AI/agent pipelines are where I want to go.",
   ],
   stats: [
     { value: "2+", label: "Years of professional experience" },
@@ -120,6 +121,19 @@ export const siteContent = {
       ],
     },
     {
+      title: "AI / LLM Engineering",
+      items: [
+        ["RAG Pipelines", "proficient"],
+        ["LangChain", "proficient"],
+        ["ChromaDB / Vector Search", "proficient"],
+        ["FastAPI", "proficient"],
+        ["Agentic AI / Tool Calling", "working"],
+        ["LLM Evals & Prompt Safety", "working"],
+        ["Claude API / Ollama", "working"],
+        ["LangGraph", "learning"],
+      ],
+    },
+    {
       title: "Cloud & DevOps",
       items: [
         ["Microsoft Azure", "working"],
@@ -177,6 +191,23 @@ export const siteContent = {
     "Resolved production-facing security issues including CORS misconfiguration, prototype pollution, and authorization gaps.",
   ],
   projects: [
+    {
+      title: "Artha — Finance AI Assistant (RAG + Agents)",
+      path: "~/artha/backend/app/services/agent_service.py",
+      stack: ["FastAPI", "LangChain", "ChromaDB", "Claude / Ollama", "PostgreSQL", "Next.js"],
+      metric: "RAG → tool-calling agent · 11 sprints",
+      description: "Production-grade AI assistant for Indian stock markets (NSE/BSE). Grounds every answer in retrieved real data, then a tool-calling agent decomposes multi-step questions. ~277 commits across 11 sprints.",
+      features: [
+        "Multi-collection RAG (ChromaDB): stock data, news, Indian market calendar — manual LCEL chains for retrieval control",
+        "Tool-calling agent: 4 tools + keyword router; tool calls stream live to the chat UI (SSE)",
+        "Eval suite + prompt-injection tests for agent quality and safety",
+        "Encrypted Zerodha + Groww broker sync; JWT/CSRF auth; multi-user PostgreSQL; GitHub Actions CI",
+        "Next.js 14 frontend (~215 tests), SSE streaming, Expert/Simple modes",
+      ],
+      status: "Sprint 11 · deploying next",
+      production: false,
+      tone: "blue",
+    },
     {
       title: "FINAC Bank Statement Analyzer",
       path: "~/finac/bank-statement-analyzer.py",
@@ -372,9 +403,16 @@ export const siteContent = {
     {
       title: "Bank Statement Analyzer",
       path: "~/oss/bank-statement-analyzer",
-      desc: "Open-source bank statement parser: PDF/Excel/CSV with dynamic column detection.",
-      stack: ["Python", "Pandas", "pdfplumber", "Flask", "React+TS"],
+      desc: "Multi-format bank statement parser (PDF/Excel/CSV) with dynamic column detection. Migrated Flask → FastAPI; added LLM transaction categorization via Ollama.",
+      stack: ["Python", "FastAPI", "pdfplumber", "Pandas", "Ollama", "React+TS"],
       url: "https://github.com/RonitRohil/Bank-Statement-Analyzer",
+    },
+    {
+      title: "Finance-Tracker",
+      path: "~/oss/finance-tracker",
+      desc: "Personal finance SPA — bank accounts, investments, loans, recurring rules. Idempotent statement import with drift detection and balance reconciliation.",
+      stack: ["React", "TypeScript", "Supabase", "Vite", "Vitest"],
+      url: "https://github.com/RonitRohil/Finance-Tracker",
     },
     {
       title: "Multi-Site Web Scraper",
