@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
+import IncidentLog from './components/IncidentLog';
 import Skills from './components/Skills';
 import DomainExpertise from './components/DomainExpertise';
 import Projects from './components/Projects';
@@ -82,6 +83,7 @@ export default function App() {
           <Hero visible={booted} />
           <Divider /><About />
           <Divider /><Experience />
+          <Divider /><IncidentLog />
           <Divider /><Skills />
           <Divider /><DomainExpertise />
           <Divider /><Projects />
