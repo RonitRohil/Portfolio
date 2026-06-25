@@ -12,7 +12,7 @@ export default function Experience() {
 
       {d.experience.map((exp, idx) => (
         <Reveal key={idx}>
-          <div style={{ position: 'relative', paddingLeft: '28px' }}>
+          <div style={{ position: 'relative', paddingLeft: '28px', marginBottom: '48px' }}>
             {/* Vertical line */}
             <div style={{ position: 'absolute', left: 0, top: '10px', bottom: 0, width: '1px', background: 'linear-gradient(to bottom, rgba(63,185,80,0.4), transparent)' }} />
             <div style={{ position: 'absolute', left: '-5px', top: '8px', width: '11px', height: '11px', borderRadius: '50%', background: 'var(--green)', boxShadow: '0 0 12px rgba(63,185,80,0.6)' }} />
